@@ -11,6 +11,7 @@ import Wait from "./views/wait";
 import Answer from "./views/answer";
 import Configure from "./views/configure";
 import Evaluate from "./views/evaluate";
+import Analyse from "./views/analyse";
 
 export default function AppViewManager() {
 	const view = useSelector((state: AppState) => state.view);
@@ -34,6 +35,9 @@ export default function AppViewManager() {
 
 			case Page.CONFIGURE:
 				return <Configure />;
+
+			case Page.ANALYSE:
+				return <Analyse />;
 
 			default:
 				return (
