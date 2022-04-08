@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "./reducer/reducer";
+
+import { _loadFontsAsync } from "./utils/_loadFontsAsync";
+import AppViewManager from "./AppViewManager";
+import { ImageBackground } from "react-native";
+import { background_image } from "./assets/data_uri_images";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	const [fontsLoaded, setFontsLoaded] = useState(false);
+	_loadFontsAsync(() => {
+		setFontsLoaded(true);
+	});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	const image = {
+		uri: background_image,
+	};
+
+	return (
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				{fontsLoaded ? (
+					<AppViewManager />
+				) : (
+					<ImageBackground
+						source={image}
+						resizeMode="cover"
+						resizeMethod="scale"
+						style={{
+							width: "100%",
+							height: "100%",
+							flex: 1,
+							justifyContent: "flex-start",
+							alignItems: "center",
+						}}
+					/>
+				)}
+			</PersistGate>
+		</Provider>
+	);
+}

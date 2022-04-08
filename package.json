@@ -10,17 +10,30 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.3",
     "expo": "~44.0.0",
+    "expo-font": "~10.0.4",
+    "expo-linear-gradient": "~11.0.3",
+    "expo-notifications": "~0.14.0",
     "expo-status-bar": "~1.2.0",
+    "radio-buttons-react-native": "^1.0.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
-    "react-native-web": "0.17.1"
+    "react-native-notifications": "^4.2.4",
+    "react-native-push-notification": "^8.1.1",
+    "react-native-web": "0.17.1",
+    "react-redux": "^7.2.8",
+    "redux": "^4.1.2",
+    "redux-persist": "^6.0.0",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "@types/webfontloader": "^1.6.34",
+    "redux-devtools-extension": "^2.13.9",
     "typescript": "~4.3.5"
   },
   "private": true
