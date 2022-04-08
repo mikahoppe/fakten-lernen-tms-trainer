@@ -8,16 +8,6 @@ import { store } from "../reducer/reducer";
 import { AppState } from "../types/state.d";
 import { Page } from "../types/pages.d";
 
-export type Person = {
-	id: string;
-	name: string;
-	geschlecht: string;
-	alter: number;
-	beruf: string;
-	krankheit: string;
-	eigenschaft: string;
-};
-
 Notifications.setNotificationHandler({
 	handleNotification: async () => {
 		return {

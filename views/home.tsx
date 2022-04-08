@@ -153,6 +153,41 @@ export default function Home() {
 						wait_time={45}
 						no_questions={20}
 					/>
+
+					<Pressable
+						onPress={() => {
+							store.dispatch({
+								type: "SET_VIEW",
+								payload: Page.ANALYSE,
+							});
+						}}
+						style={{
+							borderColor: "#FFFFFF",
+							backgroundColor: "#FFFFFF",
+							borderWidth: 4,
+							borderRadius: 12,
+							paddingTop: 12,
+							paddingBottom: 12,
+							paddingLeft: 32,
+							paddingRight: 32,
+							marginTop: 40,
+							marginLeft: "auto",
+							marginRight: "auto",
+							width: "90%",
+						}}
+					>
+						<Text
+							style={{
+								color: "#030303",
+								fontWeight: "bold",
+								fontSize: 20,
+								fontFamily: "SourceSansProSemibold",
+								textAlign: "center",
+							}}
+						>
+							Deine Ergebnisse
+						</Text>
+					</Pressable>
 				</ScrollView>
 
 				<Text

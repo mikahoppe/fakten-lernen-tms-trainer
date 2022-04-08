@@ -5,4 +5,5 @@ export enum Page {
 	ANSWER,
 	EVALUATE,
 	CONFIGURE,
+	ANALYSE,
 }

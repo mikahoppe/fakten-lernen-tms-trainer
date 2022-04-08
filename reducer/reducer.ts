@@ -10,6 +10,7 @@ import test from "./reduce_test";
 import settings from "./reduce_settings";
 import time from "./reduce_time";
 import view from "./reduce_view";
+import { results } from "./reduce_results";
 
 export const INITIAL_STATE: AppState = {
 	view: Page.HOME,
@@ -18,6 +19,7 @@ export const INITIAL_STATE: AppState = {
 		questions: [],
 		answers: [],
 	},
+	results: [],
 	time: new Date(),
 	settings: {
 		no_people: 10,
@@ -39,6 +41,7 @@ const persistedReducer = persistReducer(
 		settings,
 		time,
 		view,
+		results,
 	})
 );
 

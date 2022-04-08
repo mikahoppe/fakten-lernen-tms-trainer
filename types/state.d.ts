@@ -9,6 +9,7 @@ export type AppState = {
 		questions: Question[];
 		answers: number[];
 	};
+	results: Result[];
 	time: Date;
 
 	settings: {

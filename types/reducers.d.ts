@@ -5,6 +5,8 @@ export type ReducerAction = {
 		| "SET_QUESTIONS"
 		| "SET_SETTINGS"
 		| "SET_TIME"
-		| "SET_VIEW";
+		| "SET_VIEW"
+		| "ADD_RESULT"
+		| "DELETE_RESULTS";
 	payload: any;
 };

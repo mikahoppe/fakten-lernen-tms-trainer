@@ -84,6 +84,21 @@ export default function Evaluate() {
 			<Pressable
 				onPress={() => {
 					store.dispatch({
+						type: "ADD_RESULT",
+						payload: {
+							no_questions:
+								store.getState().settings.no_questions,
+							wait_time: store.getState().settings.wait_time,
+							no_people: store.getState().settings.no_people,
+							correctly_answered: answeredCorrect,
+							wrongly_answered:
+								selectedAnswers.length - answeredCorrect,
+							percentage: Math.floor(
+								(answeredCorrect / selectedAnswers.length) * 100
+							),
+						},
+					});
+					store.dispatch({
 						type: "SET_VIEW",
 						payload: Page.HOME,
 					});
