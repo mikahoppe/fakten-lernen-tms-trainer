@@ -23,13 +23,20 @@ const createCategoryData = (num: number, arr: any[][]): any[] | undefined => {
 	return undefined;
 };
 
+const createAges = (num: number) => {
+	const ages = shuffleArray([...Array(100).keys()]).slice(
+		100 - Math.ceil(num / 3)
+	);
+	return ages.map((age) => [age, age, age]).flat();
+};
+
 export const createPersonas = (num: number): Persona[] | undefined => {
 	const indices = [...Array(num).keys()];
 
 	const genders = indices.map(() => {
 		return randInt(0, 2) ? "Herr" : "Frau";
 	});
-	const ages = shuffleArray([...Array(100).keys()]).slice(100 - num);
+	const ages = createAges(num);
 	const names = createCategoryData(num, presets.namen);
 	const illnesses = createCategoryData(num, [presets.krankheiten]);
 	const professions = createCategoryData(num, presets.berufe);

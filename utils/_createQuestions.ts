@@ -9,16 +9,16 @@ const getQuestionPart = (category: string, person: Persona) => {
 		case "name":
 			return `${person.gender} ${person.name}`;
 
-		case "alter":
+		case "age":
 			return `Der/Die ${person.age}-jährige`;
 
-		case "beruf":
+		case "profession":
 			return `Der/Die ${person.profession}/in`;
 
-		case "eigenschaft":
+		case "characteristic":
 			return `Der/Die ${person.characteristic}e`;
 
-		case "krankheit":
+		case "illness":
 			return `Der/Die ${person.illness} habende`;
 	}
 };
@@ -28,16 +28,16 @@ const getAnswerPart = (category: string, person: Persona): string => {
 		case "name":
 			return `heißt ${person.gender} ${person.name}.`;
 
-		case "alter":
+		case "age":
 			return `ist ${person.age} Jahre alt.`;
 
-		case "beruf":
+		case "profession":
 			return `ist ${person.profession}/in.`;
 
-		case "eigenschaft":
+		case "characteristic":
 			return `ist ${person.characteristic}.`;
 
-		case "krankheit":
+		case "illness":
 			return `hat ${person.illness}.`;
 
 		default:
@@ -51,13 +51,19 @@ export const createTestQuestions = (
 ): Question[] => {
 	if (data === undefined) return [];
 
-	const categories = ["name", "alter", "beruf", "krankheit", "eigenschaft"];
+	const categories = [
+		"name",
+		"profession",
+		"illness",
+		"characteristic",
+		"age",
+	]; // order matters (see generation of category_1)
 	const questions: Question[] = [];
 
 	for (let index = 0; index < num; index++) {
 		const persona_index = randInt(0, data.length);
 
-		const category_1 = randInt(0, categories.length);
+		const category_1 = randInt(0, categories.length - 1);
 		const category_2 = randInt(1, categories.length);
 
 		const question =

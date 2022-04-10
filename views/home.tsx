@@ -121,23 +121,23 @@ export default function Home() {
 
 					<StartButton
 						title={"Kurz und knapp"}
-						no_people={5}
+						no_people={6}
 						wait_time={10}
-						no_questions={5}
+						no_questions={6}
 					/>
 
 					<StartButton
 						title={"Langatmige Kleinigkeiten"}
-						no_people={5}
+						no_people={6}
 						wait_time={120}
-						no_questions={5}
+						no_questions={6}
 					/>
 
 					<StartButton
 						title={"Informationsflut"}
-						no_people={20}
+						no_people={21}
 						wait_time={10}
-						no_questions={20}
+						no_questions={21}
 					/>
 
 					<StartButton
@@ -145,13 +145,6 @@ export default function Home() {
 						no_people={30}
 						wait_time={60}
 						no_questions={30}
-					/>
-
-					<StartButton
-						title={"Made in USA"}
-						no_people={20}
-						wait_time={45}
-						no_questions={20}
 					/>
 
 					<Pressable

@@ -74,7 +74,7 @@ export default function Configure() {
 							store.dispatch({
 								type: "SET_SETTINGS",
 								payload: {
-									no_people: config_no_people - 2,
+									no_people: config_no_people - 3,
 									wait_time: config_wait_time,
 									no_questions: config_no_questions,
 								},
@@ -101,7 +101,7 @@ export default function Configure() {
 								textAlign: "center",
 							}}
 						>
-							-2
+							-3
 						</Text>
 					</Pressable>
 					<Text
@@ -122,7 +122,7 @@ export default function Configure() {
 							store.dispatch({
 								type: "SET_SETTINGS",
 								payload: {
-									no_people: config_no_people + 2,
+									no_people: config_no_people + 3,
 									wait_time: config_wait_time,
 									no_questions: config_no_questions,
 								},
@@ -149,7 +149,7 @@ export default function Configure() {
 								textAlign: "center",
 							}}
 						>
-							+2
+							+3
 						</Text>
 					</Pressable>
 				</View>

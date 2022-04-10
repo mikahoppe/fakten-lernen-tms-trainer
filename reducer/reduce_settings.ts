@@ -16,9 +16,9 @@ export default function settings(
 					no_people: Math.min(
 						Math.max(
 							(action.payload as Configuration).no_people,
-							1
+							3
 						),
-						100
+						99
 					),
 					wait_time: Math.max(
 						(action.payload as Configuration).wait_time,

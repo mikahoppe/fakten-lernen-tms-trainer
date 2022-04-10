@@ -30,7 +30,7 @@ export default function Answer() {
 		};
 	});
 
-	const MAX_TIME = 4 * 60 * 1000;
+	const MAX_TIME = 7 * 60 * 1000;
 	const start: Date = useSelector((state: AppState) => state.time);
 
 	const getProgress = (now: number) => {
